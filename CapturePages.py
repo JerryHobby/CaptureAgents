@@ -14,6 +14,7 @@ from time import sleep
 StartText = "<span class=\"headerResults\">"
 StopText = "<div class=\"footerResults\">"
 FailText = "<div class=\"weAreSorry1\">"
+Delay = 15
 
 #www.progressiveagent.com/findanagent/search-results.aspx?product=Auto&zipCode=77099
 
@@ -60,7 +61,7 @@ for zip in zips:
 
 			for x in range(0, 10):
 				print(".", end="", flush=True)
-				sleep(1)			
+				sleep(Delay)			
 		else:
 			# create an empty file only.  easier to find/delete for retry later.
 			openfile = open(fn_name, 'w')
@@ -69,7 +70,7 @@ for zip in zips:
 			print(zip + ": NO AGENTS FOUND")
 			for x in range(0, 10):
 				print("!", end="", flush=True)
-				sleep(1)
+				sleep(Delay)
 
 		print("")
 
